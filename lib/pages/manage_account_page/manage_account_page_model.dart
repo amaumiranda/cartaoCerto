@@ -62,6 +62,13 @@ class ManageAccountPageModel extends FlutterFlowModel<ManageAccountPageWidget> {
     return null;
   }
 
+  // State field(s) for alertCardDue widget.
+  bool? alertCardDueValue;
+  // State field(s) for alertCardBest widget.
+  bool? alertCardBestValue;
+  // State field(s) for alertTips widget.
+  bool? alertTipsValue;
+
   @override
   void initState(BuildContext context) {
     firstNameTextControllerValidator = _firstNameTextControllerValidator;

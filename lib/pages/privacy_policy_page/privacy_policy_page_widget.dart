@@ -425,7 +425,7 @@ class _PrivacyPolicyPageWidgetState extends State<PrivacyPolicyPageWidget> {
                         ),
                       ),
                       Text(
-                        'Última atualização: 15 de Junho de 2023',
+                        'Última atualização: 15 de Novembro de 2024',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodySmall.override(
                               fontFamily: 'Inter',

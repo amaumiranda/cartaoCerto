@@ -905,8 +905,7 @@ class _ManageCardPageWidgetState extends State<ManageCardPageWidget> {
                                   context: context,
                                   builder: (alertDialogContext) {
                                     return AlertDialog(
-                                      content:
-                                          const Text('Cartão cadastrado com sucesso'),
+                                      content: const Text('Cartão salvo com sucesso'),
                                       actions: [
                                         TextButton(
                                           onPressed: () =>

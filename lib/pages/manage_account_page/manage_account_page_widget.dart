@@ -580,6 +580,294 @@ class _ManageAccountPageWidgetState extends State<ManageAccountPageWidget> {
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
+                                      Text(
+                                        'Notificações',
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
+                                            .override(
+                                              fontFamily: 'Inter Tight',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Flexible(
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              -1.0, 0.0),
+                                                      child: Icon(
+                                                        Icons
+                                                            .notifications_outlined,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        size: 24.0,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      child: Text(
+                                                        'Alertas de vencimento',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Align(
+                                                alignment: const AlignmentDirectional(
+                                                    1.0, 0.0),
+                                                child: Switch.adaptive(
+                                                  value: _model
+                                                          .alertCardDueValue ??=
+                                                      manageAccountPageUsersRow!
+                                                          .alertCardDue!,
+                                                  onChanged: (newValue) async {
+                                                    safeSetState(() => _model
+                                                            .alertCardDueValue =
+                                                        newValue);
+                                                  },
+                                                  activeColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                  activeTrackColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                  inactiveTrackColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .alternate,
+                                                  inactiveThumbColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Flexible(
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              -1.0, 0.0),
+                                                      child: Icon(
+                                                        Icons
+                                                            .notifications_outlined,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        size: 24.0,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      child: Text(
+                                                        'Alertas de cartão recomendado',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Align(
+                                                alignment: const AlignmentDirectional(
+                                                    1.0, 0.0),
+                                                child: Switch.adaptive(
+                                                  value: _model
+                                                          .alertCardBestValue ??=
+                                                      manageAccountPageUsersRow!
+                                                          .alertCardBest!,
+                                                  onChanged: (newValue) async {
+                                                    safeSetState(() => _model
+                                                            .alertCardBestValue =
+                                                        newValue);
+                                                  },
+                                                  activeColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                  activeTrackColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                  inactiveTrackColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .alternate,
+                                                  inactiveThumbColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Flexible(
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              -1.0, 0.0),
+                                                      child: Icon(
+                                                        Icons
+                                                            .notifications_outlined,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        size: 24.0,
+                                                      ),
+                                                    ),
+                                                    Flexible(
+                                                      child: Text(
+                                                        'Alertas de dicas',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Align(
+                                                alignment: const AlignmentDirectional(
+                                                    1.0, 0.0),
+                                                child: Switch.adaptive(
+                                                  value: _model
+                                                          .alertTipsValue ??=
+                                                      manageAccountPageUsersRow!
+                                                          .alertTips!,
+                                                  onChanged: (newValue) async {
+                                                    safeSetState(() =>
+                                                        _model.alertTipsValue =
+                                                            newValue);
+                                                  },
+                                                  activeColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                  activeTrackColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                  inactiveTrackColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .alternate,
+                                                  inactiveThumbColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ].divide(const SizedBox(height: 16.0)),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Material(
+                              color: Colors.transparent,
+                              elevation: 2.0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16.0),
+                              ),
+                              child: Container(
+                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  borderRadius: BorderRadius.circular(16.0),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      20.0, 20.0, 20.0, 20.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
                                       Container(
                                         decoration: BoxDecoration(
                                           color: const Color(0xFFE3F2FD),
@@ -598,7 +886,7 @@ class _ManageAccountPageWidgetState extends State<ManageAccountPageWidget> {
                                                 color: Color(0xFF1565C0),
                                                 size: 24.0,
                                               ),
-                                              Expanded(
+                                              Flexible(
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.min,
@@ -644,37 +932,66 @@ class _ManageAccountPageWidgetState extends State<ManageAccountPageWidget> {
                             ),
                             FFButtonWidget(
                               onPressed: () async {
-                                GoRouter.of(context).prepareAuthEvent();
-                                if (_model.passwordTextController.text !=
-                                    _model.passwordConfirmTextController.text) {
+                                if (_model.emailTextController.text.isEmpty) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
                                       content: Text(
-                                        'Passwords don\'t match!',
+                                        'Email required!',
                                       ),
                                     ),
                                   );
                                   return;
                                 }
 
-                                final user =
-                                    await authManager.createAccountWithEmail(
-                                  context,
-                                  _model.emailTextController.text,
-                                  _model.passwordTextController.text,
+                                await authManager.updateEmail(
+                                  email: _model.emailTextController.text,
+                                  context: context,
                                 );
-                                if (user == null) {
-                                  return;
+                                safeSetState(() {});
+
+                                if ((_model.passwordTextController.text !=
+                                            '') &&
+                                    (/* NOT RECOMMENDED */ _model
+                                            .passwordConfirmTextController
+                                            .text ==
+                                        'true')) {
+                                  await authManager.updatePassword(
+                                    newPassword:
+                                        _model.passwordTextController.text,
+                                    context: context,
+                                  );
+                                  safeSetState(() {});
                                 }
-
-                                await UsersTable().insert({
-                                  'uuid': currentUserUid,
-                                  'email': _model.emailTextController.text,
-                                  'name': _model.firstNameTextController.text,
-                                });
-
-                                context.pushNamedAuth(
-                                    'DashboardPage', context.mounted);
+                                await UsersTable().update(
+                                  data: {
+                                    'email': _model.emailTextController.text,
+                                    'name': _model.firstNameTextController.text,
+                                    'alert_card_due': _model.alertCardDueValue,
+                                    'alert_card_best':
+                                        _model.alertCardBestValue,
+                                    'alert_tips': _model.alertTipsValue,
+                                  },
+                                  matchingRows: (rows) => rows.eqOrNull(
+                                    'uuid',
+                                    currentUserUid,
+                                  ),
+                                );
+                                await showDialog(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      content:
+                                          const Text('Seus dados foram atualizados.'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(alertDialogContext),
+                                          child: const Text('Ok'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
                               },
                               text: 'Salvar Alterações',
                               options: FFButtonOptions(
@@ -695,56 +1012,6 @@ class _ManageAccountPageWidgetState extends State<ManageAccountPageWidget> {
                                 elevation: 2.0,
                                 borderRadius: BorderRadius.circular(12.0),
                               ),
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  'Já tem uma conta?',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed('LoginPage');
-                                  },
-                                  child: Text(
-                                    'Faça login',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                  ),
-                                ),
-                              ].divide(const SizedBox(width: 8.0)),
-                            ),
-                            Text(
-                              'Ao criar uma conta, você concorda com nossos Termos de Uso e Política de Privacidade',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodySmall
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    letterSpacing: 0.0,
-                                  ),
                             ),
                           ].divide(const SizedBox(height: 24.0)),
                         ),

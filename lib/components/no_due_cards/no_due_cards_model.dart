@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'settings_page_widget.dart' show SettingsPageWidget;
+import 'no_due_cards_widget.dart' show NoDueCardsWidget;
 import 'package:flutter/material.dart';
 
-class SettingsPageModel extends FlutterFlowModel<SettingsPageWidget> {
+class NoDueCardsModel extends FlutterFlowModel<NoDueCardsWidget> {
   @override
   void initState(BuildContext context) {}
 

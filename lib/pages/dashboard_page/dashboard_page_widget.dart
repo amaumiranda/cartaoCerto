@@ -1,7 +1,7 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/empty_best_card/empty_best_card_widget.dart';
-import '/components/no_cards/no_cards_widget.dart';
+import '/components/no_due_cards/no_due_cards_widget.dart';
 import '/components/tips_component/tips_component_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -307,169 +307,130 @@ class _DashboardPageWidgetState extends State<DashboardPageWidget> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      FutureBuilder<List<CreditCardsRow>>(
-                        future: CreditCardsTable().querySingleRow(
-                          queryFn: (q) => q,
-                        ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50.0,
-                                height: 50.0,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    FlutterFlowTheme.of(context).primary,
-                                  ),
-                                ),
-                              ),
-                            );
-                          }
-                          List<CreditCardsRow> rowCreditCardsRowList =
-                              snapshot.data!;
-
-                          // Return an empty Container when the item does not exist.
-                          if (snapshot.data!.isEmpty) {
-                            return Container();
-                          }
-                          final rowCreditCardsRow =
-                              rowCreditCardsRowList.isNotEmpty
-                                  ? rowCreditCardsRowList.first
-                                  : null;
-
-                          return Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Flexible(
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed('ManageCardPage');
-                                      },
-                                      child: Material(
-                                        color: Colors.transparent,
-                                        elevation: 2.0,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(16.0),
-                                        ),
-                                        child: Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    20.0, 20.0, 20.0, 20.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.min,
-                                              children: [
-                                                Icon(
-                                                  Icons.add_card,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Flexible(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed('ManageCardPage');
+                                  },
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    elevation: 2.0,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(16.0),
+                                    ),
+                                    child: Container(
+                                      width: MediaQuery.sizeOf(context).width *
+                                          1.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            20.0, 20.0, 20.0, 20.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Icon(
+                                              Icons.add_card,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
                                                       .primaryText,
-                                                  size: 34.0,
-                                                ),
-                                                Text(
-                                                  'Cadastrar cartão',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
+                                              size: 34.0,
+                                            ),
+                                            Text(
+                                              'Cadastrar cartão',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         fontSize: 15.0,
                                                         letterSpacing: 0.0,
                                                       ),
-                                                ),
-                                              ].divide(const SizedBox(height: 10.0)),
                                             ),
-                                          ),
+                                          ].divide(const SizedBox(height: 10.0)),
                                         ),
                                       ),
                                     ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                              Flexible(
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed('ListCards');
-                                      },
-                                      child: Material(
-                                        color: Colors.transparent,
-                                        elevation: 2.0,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(16.0),
-                                        ),
-                                        child: Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    20.0, 20.0, 20.0, 20.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.min,
-                                              children: [
-                                                Icon(
-                                                  Icons.list,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
+                              ],
+                            ),
+                          ),
+                          Flexible(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed('ListCards');
+                                  },
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    elevation: 2.0,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(16.0),
+                                    ),
+                                    child: Container(
+                                      width: MediaQuery.sizeOf(context).width *
+                                          1.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            20.0, 20.0, 20.0, 20.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Icon(
+                                              Icons.list,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
                                                       .primaryText,
-                                                  size: 34.0,
-                                                ),
-                                                Text(
-                                                  'Meus cartões',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
+                                              size: 34.0,
+                                            ),
+                                            Text(
+                                              'Meus cartões',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                       ),
-                                                ),
-                                              ].divide(const SizedBox(height: 10.0)),
                                             ),
-                                          ),
+                                          ].divide(const SizedBox(height: 10.0)),
                                         ),
                                       ),
                                     ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                            ].divide(const SizedBox(width: 10.0)),
-                          );
-                        },
+                              ],
+                            ),
+                          ),
+                        ].divide(const SizedBox(width: 10.0)),
                       ),
                       Material(
                         color: Colors.transparent,
@@ -561,7 +522,7 @@ class _DashboardPageWidgetState extends State<DashboardPageWidget> {
 
                                     if (listViewViewCardsDueSoonRowList
                                         .isEmpty) {
-                                      return const NoCardsWidget();
+                                      return const NoDueCardsWidget();
                                     }
 
                                     return ListView.builder(
@@ -597,7 +558,12 @@ class _DashboardPageWidgetState extends State<DashboardPageWidget> {
                                             },
                                             child: Container(
                                               decoration: BoxDecoration(
-                                                color: const Color(0xFFFFF3E0),
+                                                color:
+                                                    listViewViewCardsDueSoonRow
+                                                                .daysUntilDue! <=
+                                                            1.0
+                                                        ? const Color(0x32FF000F)
+                                                        : const Color(0xFFFFF3E0),
                                                 borderRadius:
                                                     BorderRadius.circular(12.0),
                                               ),
@@ -640,7 +606,19 @@ class _DashboardPageWidgetState extends State<DashboardPageWidget> {
                                                               ),
                                                         ),
                                                         Text(
-                                                          'Vence em ${listViewViewCardsDueSoonRow.daysUntilDue?.toString()}${listViewViewCardsDueSoonRow.daysUntilDue == 1.0 ? ' dia' : ' dias'}',
+                                                          () {
+                                                            if (listViewViewCardsDueSoonRow
+                                                                    .daysUntilDue ==
+                                                                0.0) {
+                                                              return 'Vence hoje';
+                                                            } else if (listViewViewCardsDueSoonRow
+                                                                    .daysUntilDue ==
+                                                                1.0) {
+                                                              return 'Vence amanhã';
+                                                            } else {
+                                                              return 'Vence em ${listViewViewCardsDueSoonRow.daysUntilDue?.toString()}${listViewViewCardsDueSoonRow.daysUntilDue == 1.0 ? ' dia' : ' dias'}';
+                                                            }
+                                                          }(),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodySmall

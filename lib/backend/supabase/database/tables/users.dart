@@ -28,4 +28,13 @@ class UsersRow extends SupabaseDataRow {
 
   String? get name => getField<String>('name');
   set name(String? value) => setField<String>('name', value);
+
+  bool? get alertCardDue => getField<bool>('alert_card_due');
+  set alertCardDue(bool? value) => setField<bool>('alert_card_due', value);
+
+  bool? get alertCardBest => getField<bool>('alert_card_best');
+  set alertCardBest(bool? value) => setField<bool>('alert_card_best', value);
+
+  bool? get alertTips => getField<bool>('alert_tips');
+  set alertTips(bool? value) => setField<bool>('alert_tips', value);
 }
